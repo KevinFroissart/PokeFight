@@ -9,7 +9,7 @@ public class Personnage extends Entite {
 	private int healVamp;
 	
 
-	public Personnage(String nom, int vieMax, Type type, int dmgMax, int dmgMin, int soin, int vamp) {
+	public Personnage(String nom, int vieMax, Type type, int dmgMin, int dmgMax, int soin, int vamp) {
 		super(nom, vieMax, type);
 		this.dmgMax = dmgMax;
 		this.dmgMin = dmgMin;
