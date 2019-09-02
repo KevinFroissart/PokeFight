@@ -56,7 +56,6 @@ public class Menu {
 		System.out.println(classement);
 		System.out.println(quitter);
 
-		//Scanner scan = new Scanner(System.in);
 		boolean ok = false;
 		while(!ok) {
 			int scaned = Integer.parseInt(scann());
@@ -68,7 +67,14 @@ public class Menu {
 
 			if(scaned == 3) ;
 
-			if(scaned == 2) { clearScreen(); System.out.println(MRelges); }
+			if(scaned == 2) { 
+				
+				clearScreen(); 
+				System.out.println(MRelges); 
+				System.out.println("Appuye sur 1 puis Entrer pour revenir au menu");
+				if(Integer.parseInt(scann()) == 1) main(args);
+				
+			}
 
 			if(scaned == 1) {
 
@@ -89,7 +95,16 @@ public class Menu {
 					if(roz.equals("o")) nomOK = 1; 
 					
 				}
+				
+				
+				System.out.println("pokemon vs pokemon\n-----------------------------");//Jauge de vie
+				
+				
+				
+				
+				
+				
 			}
 		}
 	}
-}//ddd
+}
