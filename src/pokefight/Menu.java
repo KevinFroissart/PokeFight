@@ -15,7 +15,8 @@ public class Menu {
 	}
 
 	int score = 0;
-	
+	static int nbBoss = 5;
+
 	static String titre = "\n" + 
 			" /$$$$$$$           /$$                 /$$$$$$$$ /$$           /$$         /$$     \n" + 
 			"| $$__  $$         | $$                | $$_____/|__/          | $$        | $$    \n" + 
@@ -45,7 +46,9 @@ public class Menu {
 			               + "voir les crédits ou quitter le jeu.\n";
 
 	public static void main(String args[]) throws IOException {
-
+		
+		clearScreen();
+		
 		String nomJoueur = "";
 
 		System.err.println(titre);
@@ -55,6 +58,12 @@ public class Menu {
 		System.out.println(progression);
 		System.out.println(classement);
 		System.out.println(quitter);
+		
+		boolean boss1 = false;
+		boolean boss2 = false;
+		boolean boss3 = false;
+		boolean boss4 = false;
+		boolean boss5 = false;
 
 		boolean ok = false;
 		while(!ok) {
@@ -65,7 +74,23 @@ public class Menu {
 
 			if(scaned == 4) ;
 
-			if(scaned == 3) ;
+			if(scaned == 3) {
+				
+				for(int i = 0; i < nbBoss; i++) {
+					System.out.print("Boss n°" + (i+1) + " :");
+					
+					switch(i) {
+					case 0: if(boss1) System.out.print("OK");
+					case 1: if(boss1) System.out.print("OK");
+					case 2: if(boss1) System.out.print("OK");
+					case 3: if(boss1) System.out.print("OK");
+					case 4: if(boss1) System.out.print("OK");
+					System.out.println();
+					}
+				}
+				System.out.println("Appuye sur 1 puis Entrer pour revenir au menu");
+				if(Integer.parseInt(scann()) == 1) main(args);
+			}
 
 			if(scaned == 2) { 
 				
