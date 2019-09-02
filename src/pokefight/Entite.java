@@ -4,10 +4,12 @@ public abstract class Entite {
 	private String nom;
 	private int vie;
 	private Type type;
+	private int vieMax;
 	
-	public Entite(String nom,int vie,Type type) {
+	public Entite(String nom,int vieMax,Type type) {
 		this.nom=nom;
-		this.vie=vie;
+		this.vieMax=vieMax;
+		this.vie=vieMax;
 		this.type=type;
 	}
 	
@@ -20,11 +22,19 @@ public abstract class Entite {
 	public int getVie() {
 		return vie;
 	}
-	public void setVie(int vie) {
-		this.vie = vie;
+	
+	public int getVieMax() {
+		return this.vieMax;
+	}
+	public void setFullVie() {
+		this.vie = vieMax;
 	}
 	public Type getType() {
 		return type;
+	}
+	
+	public void vieRestante(int dmg) {
+		this.vie = this.vie - dmg;
 	}
 	
 	
