@@ -1,6 +1,6 @@
 package pokefight;
 
-public class Personnages {
+public abstract class Entite {
 	String nom;
 	int vie;
 	int degatMin;
