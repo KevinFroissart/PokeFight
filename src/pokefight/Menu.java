@@ -16,7 +16,8 @@ public class Menu {
 
 	int score = 0;
 	static int nbBoss = 5;
-
+	static int nbBossBattu = 0;
+	static String nomJoueur = "";
 	static String titre = "\n" + 
 			" /$$$$$$$           /$$                 /$$$$$$$$ /$$           /$$         /$$     \n" + 
 			"| $$__  $$         | $$                | $$_____/|__/          | $$        | $$    \n" + 
@@ -47,9 +48,9 @@ public class Menu {
 
 	public static void main(String args[]) throws IOException {
 		
-		clearScreen();
+		//clearScreen();
 		
-		String nomJoueur = "";
+		
 
 		System.err.println(titre);
 		System.out.println();
@@ -121,8 +122,8 @@ public class Menu {
 					
 				}
 				
-				
-				System.out.println("pokemon vs pokemon\n-----------------------------");//Jauge de vie
+				CombatTourParTour.main(args);
+				//System.out.println("pokemon vs pokemon\n-----------------------------");//Jauge de vie
 				
 				
 				

@@ -37,5 +37,4 @@ public abstract class Entite {
 		this.vie = this.vie - dmg;
 	}
 	
-	
 }
