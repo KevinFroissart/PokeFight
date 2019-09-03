@@ -125,5 +125,5 @@ public class CombatTourParTour {
 			running = false;
 			}
 		}
-	}
+	}sss
 }
