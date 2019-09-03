@@ -37,4 +37,8 @@ public class ChoixPerso {
 			if(scaned == 3) ChoixPerso.PersoChoisi = magicarpette;
 		}	
 	}
+	
+	public static Personnage PersoChoisi() {
+		return ChoixPerso.PersoChoisi;
+	}
 }
