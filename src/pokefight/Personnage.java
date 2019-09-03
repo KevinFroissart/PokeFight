@@ -61,5 +61,5 @@ public class Personnage extends Entite {
 		return comp3;
 	}
 	
-	\*\
+	
 }
