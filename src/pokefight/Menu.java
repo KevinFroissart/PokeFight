@@ -106,21 +106,23 @@ public class Menu {
 
 			if(scaned == 1) {
 
-				int nomOK = 0;
+				if (nbBossBattu == 0 ) {
+					int nomOK = 0;
 				
-				while(nomOK == 0) {
+					while(nomOK == 0) {
 					
-					clearScreen();
-					System.out.println("Entre ton nom :");
+						clearScreen();
+						System.out.println("Entre ton nom :");
 
-					nomJoueur = scann();
+						nomJoueur = scann();
 
-					System.out.println("Ton nom est bien " + nomJoueur + " ?");
-					System.out.println("Oui = o    Non = n");
+						System.out.println("Ton nom est bien " + nomJoueur + " ?");
+						System.out.println("Oui = o    Non = n");
+						
+						String roz = scann();
 					
-					String roz = scann();
-					
-					if(roz.equals("o")) nomOK = 1; 
+						if(roz.equals("o")) nomOK = 1; 
+					}
 					
 				}
 				
