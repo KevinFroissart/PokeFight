@@ -44,7 +44,7 @@ public class Score {
 	        }
 	        return list;
 	    } catch (IOException e) {
-	        e.printStackTrace();//d
+	        e.printStackTrace();
 	        return null;
 	    }  
 	}
@@ -53,21 +53,15 @@ public class Score {
 		BufferedReader read;
 		try {
 			read = new BufferedReader(new FileReader(FileName));
-			int compteur = 0;
-			while (read.readLine() != null) {
-				 compteur++;
-				 System.out.println(compteur);
-			}
-			read.close();
-			List<String> list = Affichage(",");
-			 System.out.println(compteur);
-			 for(int i=0;i<Affichage(",").size();i++){
-				    System.out.println(list.get(i));
+			List<String[]> list = Affichage(",");
+			 for(int i=0;i<list.size();i++){
+				    System.out.print(list.get(i)[0]);
+				    System.out.print(" : ");
+				    System.out.print(list.get(i)[1]);
+				    System.out.println(" points");
 				} 			
-			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 }
