@@ -135,6 +135,7 @@ public class CombatTourParTour {
 				System.out.println(boss +" n'a plus de vie, vous avez vaincu "+ boss + ".");
 				Menu.setNbBossBattu(Menu.getNbBossBattu()+1);
 			running = false;
+			
 			}
 		}
 	}

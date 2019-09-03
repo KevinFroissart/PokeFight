@@ -142,6 +142,7 @@ public class Menu {
 				if (nbBossBattu == 4){boss4 = true; boss3 = false;}
 				if (nbBossBattu == 5){boss5 = true; boss4 = false;}
 			
+				Menu.main(args);
 			}
 		}
 		
