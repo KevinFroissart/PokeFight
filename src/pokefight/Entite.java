@@ -38,6 +38,6 @@ public abstract class Entite {
 	
 	public void vieRestante(int dmg) {
 		this.vie = this.vie - dmg;
-	}/*/
+	}
 	
 }
