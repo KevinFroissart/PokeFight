@@ -30,9 +30,9 @@ public class ChoixPerso {
 
 			String scanedT = scann();
 
-			if(scanedT.matches("[1-5]")) {
+			if(scanedT.matches("[1-3]")) {
 				ok = true;
-				int scaned = Integer.parseInt(scann());
+				int scaned = Integer.parseInt(scanedT);
 				
 				if(scaned > 0 && scaned < 4) ok = true;
 
