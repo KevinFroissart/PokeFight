@@ -145,10 +145,10 @@ public class Menu {
 				if(nbBossBattu != 5) {System.out.println("Vous avez vaincu ce Boss légendaire ! Le suivant n'a qu'à bien se tenir !\n\n\n");
 				Menu.main(args);
 				}
-				//blabla
-				System.out.println("BRAVO !!!!! VOUS ETES SORTIE INDEMNE DE CE DONJON !!!!!\n VOUS ETES LIBRE ET VOUS ETES DEVENU LE MEILLEUR POKEFIGHTER");
+				
 			}
-		}
+		} 				System.out.println("BRAVO !!!!! VOUS ETES SORTIE INDEMNE DE CE DONJON !!!!!\n VOUS ETES LIBRE ET VOUS ETES DEVENU LE MEILLEUR POKEFIGHTER");
+
 		
 	}
 
