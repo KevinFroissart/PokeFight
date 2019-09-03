@@ -1,30 +1,14 @@
-Test1,10
-Test2,11
-Test3,50
-test4,30
-test5,40
-test6,60
-test7,70
-test8,310
-test9,130
-test10,230
-test11,70
-test12,90
-test13,39
-le BG,500
-o,695
-o,269
-o,1393
-o,362
-o,916
-<<<<<<< HEAD
-Kevin,1723
-=======
-tom,2282
-o,2686
-<<<<<<< HEAD
-tom,928
-o,415
-=======
->>>>>>> branch 'master' of https://git-iut.univ-lille1.fr/froissak/pokefight.git
->>>>>>> branch 'master' of https://git-iut.univ-lille1.fr/froissak/pokefight.git
+"Test1",10
+"Test2",11
+"Test3",50
+"test4",30
+"test5",40
+"test6",60
+"test7",70
+"test8",310
+"test9",130
+"test10",230
+"test11",70
+"test12",90
+"test13",39
+2,102
