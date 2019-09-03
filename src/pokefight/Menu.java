@@ -142,8 +142,11 @@ public class Menu {
 				if (nbBossBattu == 4){boss4 = true; boss3 = false;}
 				if (nbBossBattu == 5){boss5 = true; boss4 = false;}
 			
-				System.out.println("Vous avez vaincu ce Boss légendaire ! Le suivant n'a qu'à bien se tenir !\n\n\n");
+				if(nbBossBattu != 5) {System.out.println("Vous avez vaincu ce Boss légendaire ! Le suivant n'a qu'à bien se tenir !\n\n\n");
 				Menu.main(args);
+				}
+				
+				System.out.println("BRAVO !!!!! VOUS ETES SORTIE INDEMNE DE CE DONJON !!!!!\n VOUS ETES LIBRE ET VOUS ETES DEVENU LE MEILLEUR POKEFIGHTER");
 			}
 		}
 		
