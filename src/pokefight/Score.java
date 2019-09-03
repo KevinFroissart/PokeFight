@@ -44,7 +44,7 @@ public class Score {
 	        }
 	        return list;
 	    } catch (IOException e) {
-	        e.printStackTrace();
+	        e.printStackTrace();//d
 	        return null;
 	    }  
 	}
