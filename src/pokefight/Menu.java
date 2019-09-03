@@ -136,11 +136,12 @@ public class Menu {
 				CombatTourParTour.main(args);
 				//System.out.println("pokemon vs pokemon\n-----------------------------");//Jauge de vie
 				
-				
-				
-				
-				
-				
+				if (nbBossBattu == 1)boss1 = true;
+				if (nbBossBattu == 2){boss2 = true; boss1 = false;}
+				if (nbBossBattu == 3){boss3 = true; boss2 = false;}
+				if (nbBossBattu == 4){boss4 = true; boss3 = false;}
+				if (nbBossBattu == 5){boss5 = true; boss4 = false;}
+			
 			}
 		}
 		
