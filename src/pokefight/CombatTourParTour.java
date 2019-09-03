@@ -22,6 +22,7 @@ public class CombatTourParTour {
 		Boss zebibron = new Boss("Zébibron",650,Type.FEU, "Jugement", 25,70);
 		Personnage perso = ChoixPerso.PersoChoisi();
 
+
 		int vie = 0;
 		int attaqueMax = 0;
 		
@@ -65,8 +66,10 @@ public class CombatTourParTour {
 
 			while (boss.getVie()>0){
 
-				System.out.println("\t Votre vie : " + perso.getVie());
-				System.out.println("\t Le " + boss.getNom() + " a "+ boss.getVie()+" point de vie\n");
+				System.out.println("\t "+perso.getNom()+" ["+perso.getVie()+"/"+perso.getVieMax()+"]");
+				System.out.println(perso);
+				System.out.println("\t "+boss.getNom()+" ["+boss.getVie()+"/"+boss.getVieMax()+"]");
+				System.out.println(boss);
 				System.out.println("----------------------------------------------------------------\n");
 				System.out.println("\n\t Que doit faire "+perso.getNom()+" ?\n");
 				System.out.println("	Compétences :\n");
@@ -80,6 +83,8 @@ public class CombatTourParTour {
 				String clavier = sc.nextLine();
 				clearScreen();
 				System.out.println("----------------------------------------------------------------\n");
+
+				
 
 				if(clavier.equals("1")){
 					int dommagePerso = efficaciteJoueur(perso, boss, perso.attaque());
@@ -144,7 +149,7 @@ public class CombatTourParTour {
 		if(boss.getType() == Type.PLANTE) {
 			if(perso.getType() == Type.EAU) {
 				System.out.println("\t> Ce n'est pas tres efficace...");
-				return (int) (dmg * 0.30);
+				return (int) (dmg * 0.85);
 			}		
 			if(perso.getType() == Type.PLANTE) {
 				return dmg;
@@ -152,14 +157,14 @@ public class CombatTourParTour {
 			
 			if(perso.getType() == Type.FEU) {
 				System.out.println("\t> C'est super efficace !");
-				return (int) (dmg * 1.30);
+				return (int) (dmg * 1.15);
 			}
 		}
 		
 		if(boss.getType() == Type.EAU) {
 			if(perso.getType() == Type.FEU) {
 				System.out.println("\t> Ce n'est pas tres efficace...");
-				return (int) (dmg * 0.30);
+				return (int) (dmg * 0.85);
 			}
 			
 			if(perso.getType() == Type.EAU) {
@@ -168,14 +173,14 @@ public class CombatTourParTour {
 			
 			if(perso.getType() == Type.PLANTE) {
 				System.out.println("\t> C'est super efficace !");
-				return (int) (dmg * 1.30);
+				return (int) (dmg * 1.15);
 			}
 		}
 		
 		if(boss.getType() == Type.FEU) {
 			if(perso.getType() == Type.PLANTE) {
 				System.out.println("\t> Ce n'est pas tres efficace...");
-				return (int) (dmg * 0.30);
+				return (int) (dmg * 0.85);
 			}
 			
 			if(perso.getType() == Type.FEU) {
@@ -184,7 +189,7 @@ public class CombatTourParTour {
 			
 			if(perso.getType() == Type.EAU) {
 				System.out.println("\t> C'est super efficace !");
-				return (int) (dmg * 1.30);
+				return (int) (dmg * 1.15);
 			}
 		}
 		return 0;
@@ -201,7 +206,7 @@ public class CombatTourParTour {
 			}
 			
 			if(perso.getType() == Type.FEU) {
-				return (int) (dmg * 0.30);
+				return (int) (dmg * 0.70);
 			}
 		}
 		
@@ -215,7 +220,7 @@ public class CombatTourParTour {
 			}
 			
 			if(perso.getType() == Type.PLANTE) {
-				return (int) (dmg * 0.30);
+				return (int) (dmg * 0.70);
 			}
 		}
 		
@@ -229,7 +234,7 @@ public class CombatTourParTour {
 			}
 			
 			if(perso.getType() == Type.EAU) {
-				return (int) (dmg * 0.30);
+				return (int) (dmg * 0.70);
 			}
 		}
 		return 0;
