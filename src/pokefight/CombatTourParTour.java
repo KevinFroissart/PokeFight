@@ -15,7 +15,7 @@ public class CombatTourParTour {
 		Boss salamord = new Boss("Salamord",480,Type.PLANTE,45,65);
 		Boss bellupine = new Boss("Bellupine",500,Type.EAU,50,60);
 		Boss zebibron = new Boss("Zébibron",650,Type.FEU,25,70);
-		Personnage perso = new Personnage(Menu.nomJoueur, 500, Type.PLANTE, 40, 60, 35, 25);
+		Personnage perso = new Personnage(Menu.nomJoueur, 500, Type.PLANTE,"attaque", 40, 60,"soignage", 35,"vamp", 25);
 
 		int vie = 0;
 		int attaqueMax = 0;
@@ -63,9 +63,9 @@ public class CombatTourParTour {
 				System.out.println("\t Le " + boss + " a "+ boss.getVie()+" point de vie");
 				System.out.println("\n\t quelle action ? \n");
 				System.out.println("	Attaquer:\n");
-				System.out.print("\t1. Attaque 1");
-				System.out.print("\t2. Attaque 2");
-				System.out.println("\t3. Attaque 3");
+				System.out.print("\t1. "+perso.getComp1());
+				System.out.print("\t2. "+perso.getComp2());
+				System.out.println("\t3. "+perso.getComp3());
 				System.out.println();
 				System.out.println("\t4. Abandonner");
 				System.out.println("----------------------------------------------------------------\n");
@@ -81,6 +81,30 @@ public class CombatTourParTour {
 
 					System.out.println("----------------------------------------------------------------\n");
 					System.out.println("\t> vous frapper " + boss.getNom() +" et causez "+ dommagePerso + " dmg");
+					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
+				}
+				
+				if(clavier.equals("2")){
+					perso.soin(perso.getSoin());
+					int dommageBoss = boss.attaque();
+
+					perso.vieRestante(dommageBoss);
+
+					System.out.println("----------------------------------------------------------------\n");
+					System.out.println("\t> vous vous soignez et recevez "+ perso.getSoin());
+					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
+				}
+				
+				if(clavier.equals("3")){
+					int dommagePerso = perso.getDmgVamp();
+					perso.soin(perso.getHealVamp());
+					int dommageBoss = boss.attaque();
+
+					boss.vieRestante(dommagePerso);
+					perso.vieRestante(dommageBoss);
+
+					System.out.println("----------------------------------------------------------------\n");
+					System.out.println("\t> vous frapper " + boss.getNom() +" et causez "+ dommagePerso + " dmg et vous soignez de "+ perso.getHealVamp()+"point de vie");
 					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
 				}
 				
