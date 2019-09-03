@@ -177,6 +177,7 @@ public class CombatTourParTour {
 			}
 		}
 		
+		
 		if(boss.getType() == Type.FEU) {
 			if(perso.getType() == Type.PLANTE) {
 				System.out.println("\t> Ce n'est pas tres efficace...");
