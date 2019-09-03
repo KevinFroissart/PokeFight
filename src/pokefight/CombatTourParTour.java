@@ -55,12 +55,12 @@ public class CombatTourParTour {
 
 			System.out.println("-------------------------------------------------------");
 
-			System.out.println("\t# ATTENTION ! Un " + boss + " est apparu ! #\n");
+			System.out.println("\t# ATTENTION ! Un " + boss.getNom() + " est apparu ! #\n");
 
 			while (boss.getVie()>0){
 
 				System.out.println("\t Votre vie : " + perso.getVie());
-				System.out.println("\t Le " + boss + " a "+ boss.getVie()+" point de vie");
+				System.out.println("\t Le " + boss.getNom() + " a "+ boss.getVie()+" point de vie");
 				System.out.println("\n\t quelle action ? \n");
 				System.out.println("	Attaquer:\n");
 				System.out.print("\t1. "+perso.getComp1());
@@ -119,6 +119,7 @@ public class CombatTourParTour {
 					break;
 
 				}
+				running = false;
 
 			}
 			if (vieBoss <=0) { 
