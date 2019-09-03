@@ -22,6 +22,9 @@ public abstract class Entite {
 	public int getVie() {
 		return vie;
 	}
+	public void setVie(int vie) {
+		this.vie = vie;
+	}
 	
 	public int getVieMax() {
 		return this.vieMax;
@@ -35,6 +38,6 @@ public abstract class Entite {
 	
 	public void vieRestante(int dmg) {
 		this.vie = this.vie - dmg;
-	}
+	}/*/
 	
 }
