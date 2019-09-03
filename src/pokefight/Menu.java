@@ -20,7 +20,7 @@ public class Menu {
 	static boolean boss4 = false;
 	static boolean boss5 = false;
 	
-	int score = 0;
+	static int score = 0;
 	static int nbBoss = 5;
 	static int nbBossBattu = 0;
 	static String nomJoueur = "";
@@ -43,10 +43,10 @@ public class Menu {
 	static String classement = "4 - Classement";
 	static String quitter = "5 - Quitter";
 	static String MRelges = "            -------------------------\n            | REGLES DE POKEFIGHTER |\n            -------------------------\n" 
-			               + "Dans ce jeu vous incarnez  un Pokefighter qui se \n"  
-			               + "retrouve bloquer dans un donjon. \n" 
-			               + "Pour réussir à s'en sortir, \nvous allez devoir combattre de terribles "
-			               + "adversaires \net acquerir de l'experience jusqu'à vaincre le boss\n"
+			               + "Bienvenu dans PokéFight \n"  
+			               + "Choisissez votre PokéFighter et affrontez tous les boss pour gagner. \n" 
+			               + "Chaque Pokéfighter et chaque ennemies possèdent des types parmis \n "
+			               + "les types EAU,\n"
 			               + "final de ce donjon. \n"
 			               + "Mais attention à ne pas vous retrouver sans point de vie avant la fin,\n"
 			               + "ou vous devrez retourner à l'entrée ! \n"
@@ -161,6 +161,7 @@ public class Menu {
 	}
 	
 	public static void reset() {
+		score = 0;
 		Menu.setNbBossBattu(0);
 		boss1 = false;
 		boss2 = false;
