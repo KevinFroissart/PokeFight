@@ -17,10 +17,10 @@ public class CombatTourParTour {
 		Scanner sc = new Scanner(System.in);
 		Random rand = new Random();
 
-		Boss turtuna = new Boss("Turtuna",400,Type.EAU, "Jet d'eau", 35,55);
-		Boss jaguabite = new Boss("Jaguabite",450,Type.FEU, "Lance flamme", 45,60);
-		Boss salamord = new Boss("Salamord",480,Type.PLANTE, "Tranche herbe", 45,65);
-		Boss bellupine = new Boss("Bellupine",500,Type.EAU, "Pistolet à O", 50,60);
+		Boss turtuna = new Boss("Turtuna",400,Type.EAU, "Jet d'eau", 35,55); //plante
+		Boss jaguabite = new Boss("Jaguabite",450,Type.FEU, "Lance flamme", 45,60); //eau
+		Boss salamord = new Boss("Salamord",480,Type.PLANTE, "Tranche herbe", 45,65); //feu
+		Boss bellupine = new Boss("Bellupine",500,Type.EAU, "Pistolet à O", 50,60); //plante 
 		Boss zebibron = new Boss("Zebibron",650,Type.FEU, "Jugement", 25,70);
 		Personnage perso = ChoixPerso.PersoChoisi();
 		
