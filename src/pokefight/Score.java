@@ -69,11 +69,6 @@ public class Score {
 	public static void main(String args[]) throws IOException {
 
 		BufferedReader read;
-		//NewScore("Test1", "10");
-		//NewScore("Test2", "40");
-		NewScore("Test3", "50");
-		//NewScore("Test4", "20");
-		//NewScore("Test5", "140");
 
 		try {
 			read = new BufferedReader(new FileReader(FileName));
