@@ -21,7 +21,7 @@ public class CombatTourParTour {
 		Boss jaguabite = new Boss("Jaguabite",450,Type.FEU, "Lance flamme", 45,60);
 		Boss salamord = new Boss("Salamord",480,Type.PLANTE, "Tranche herbe", 45,65);
 		Boss bellupine = new Boss("Bellupine",500,Type.EAU, "Pistolet à O", 50,60);
-		Boss zebibron = new Boss("Zébibron",650,Type.FEU, "Jugement", 25,70);
+		Boss zebibron = new Boss("Zebibron",650,Type.FEU, "Jugement", 25,70);
 		Personnage perso = ChoixPerso.PersoChoisi();
 		
 
@@ -67,7 +67,7 @@ public class CombatTourParTour {
 			System.out.println("\t"+perso.getNom()+" à toi de jouer !\n");
 
 			while (boss.getVie()>0){
-
+				System.out.println(perso.ascii()+"\n");
 				System.out.println("\t "+perso.getNom()+" ["+perso.getVie()+"/"+perso.getVieMax()+"]");
 				System.out.println(perso);
 				System.out.println("\t "+boss.getNom()+" ["+boss.getVie()+"/"+boss.getVieMax()+"]");
@@ -147,6 +147,7 @@ public class CombatTourParTour {
 
 			}
 			if (boss.getVie() <=0) { 
+				System.out.println(boss.ascii()+"\n");
 				System.out.println(boss.getNom()  +" n'a plus de vie, vous avez vaincu "+ boss.getNom() + ".");
 				score = score+perso.getVie();
 				System.out.println("Score obtenu : "+score); 

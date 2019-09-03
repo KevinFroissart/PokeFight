@@ -36,4 +36,5 @@ public class Boss extends Entite {
 	public String getComp1() {
 		return this.comp1;
 	}
+
 }
