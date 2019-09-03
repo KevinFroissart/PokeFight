@@ -122,7 +122,7 @@ public class CombatTourParTour {
 					break;
 				}
 
-				if(vie<=0) {
+				if(perso.getVie()<=0) {
 					System.out.println("Vous avez perdu, vous devez retourner au debut :(");
 					running = false;
 					break;
@@ -131,7 +131,7 @@ public class CombatTourParTour {
 				running = false;
 
 			}
-			if (vieBoss <=0) { 
+			if (boss.getVie() <=0) { 
 				System.out.println(boss +" n'a plus de vie, vous avez vaincu "+ boss + ".");
 				Menu.setNbBossBattu(Menu.getNbBossBattu()+1);
 			running = false;
