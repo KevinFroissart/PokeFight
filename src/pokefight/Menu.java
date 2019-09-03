@@ -75,7 +75,12 @@ public class Menu {
 
 			if(scaned == 5) Runtime.getRuntime().exec("taskkill /F /IM process.exe");;
 
-			if(scaned == 4) ;
+			if(scaned == 4) {
+				Score.main(args);
+				System.out.println();
+				System.out.println("Appuye sur 1 puis Entrer pour revenir au menu");
+				if(Integer.parseInt(scann()) == 1) main(args);
+			}
 
 			if(scaned == 3) {
 				

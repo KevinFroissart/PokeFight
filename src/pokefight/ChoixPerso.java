@@ -34,10 +34,6 @@ public class ChoixPerso {
 			if(scaned == 2) ChoixPerso.PersoChoisi = herbisoux;
 
 			if(scaned == 3) ChoixPerso.PersoChoisi = magicarpette;
-		}
-
-
-		
+		}	
 	}
-
 }
