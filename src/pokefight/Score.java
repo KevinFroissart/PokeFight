@@ -74,11 +74,18 @@ public class Score {
 			read = new BufferedReader(new FileReader(FileName));
 			List<String[]> list = Affichage(",");
 			list = trie(list);
+			System.out.println("---- CLASSEMENT ----");
+			System.out.println();
+			int cpt = 0;
 			for(int i=0;i<list.size();i++){
+				if(cpt < 10) {
+				System.out.print((i+1)+" ");
 				System.out.print(list.get(i)[0]);
 				System.out.print(" : ");
 				System.out.print(list.get(i)[1]);
 				System.out.println(" points");
+				cpt++;
+				}
 			} 	
 			read.close();
 		} catch (FileNotFoundException e) {
