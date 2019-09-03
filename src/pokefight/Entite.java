@@ -40,4 +40,16 @@ public abstract class Entite {
 		this.vie = this.vie - dmg;
 	}
 	
+	public String toString() {
+		String jauge = "[";
+		for(int i = 0; i < (int) (this.vie/10); i++) {
+			jauge = jauge +"▒";
+		}
+		for(int i = 0; i < (int) ((this.vieMax-this.vie)/10); i++) {
+			jauge = jauge +"░";
+		}
+		jauge = jauge +']';
+		return jauge;
+	}
+	
 }
