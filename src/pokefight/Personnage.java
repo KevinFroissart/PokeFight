@@ -52,6 +52,5 @@ public class Personnage extends Entite {
 	public String getComp3() {
 		return comp3;
 	}
-	/*555*/
 	
 }
