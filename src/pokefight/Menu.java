@@ -159,4 +159,13 @@ public class Menu {
 	public static void setNbBossBattu(int nbBossBattu) {
 		Menu.nbBossBattu = nbBossBattu;
 	}
+	
+	public static void reset() {
+		Menu.setNbBossBattu(0);
+		boss1 = false;
+		boss2 = false;
+		boss3 = false;
+		boss4 = false;
+		boss5 = false;
+	}
 }
