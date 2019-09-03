@@ -136,5 +136,14 @@ public class Menu {
 				
 			}
 		}
+		
+	}
+
+	public static int getNbBossBattu() {
+		return nbBossBattu;
+	}
+
+	public static void setNbBossBattu(int nbBossBattu) {
+		Menu.nbBossBattu = nbBossBattu;
 	}
 }
