@@ -152,15 +152,18 @@ public class Menu {
 							System.out.println("Entre ton nom :");
 
 							nomJoueur = scann();
-
 							System.out.println("Ton nom est bien " + nomJoueur + " ?");
 							System.out.println("Oui = o    Non = n");
-
 							String roz = scann();
 
-							if(roz.equals("o")) nomOK = 1; 
+							if(roz.matches("o") || roz.matches("n")) {
+								if(roz.equals("o")) {
+									nomOK = 1;
+								} else {
+									System.err.println("Entrez o pour Oui et n pour Non.");
+								}
+							}
 						}
-
 					}
 					ChoixPerso.main(args);
 					CombatTourParTour.main(args);
@@ -180,8 +183,6 @@ public class Menu {
 				System.err.println("Entrez un nombre en 1 et 5 !");
 			}
 		} 				System.out.println("BRAVO !!!!! VOUS ETES SORTIE INDEMNE DE CE DONJON !!!!!\n VOUS ETES LIBRE ET VOUS ETES DEVENU LE MEILLEUR POKEFIGHTER");
-
-
 	}
 
 	public static int getNbBossBattu() {
