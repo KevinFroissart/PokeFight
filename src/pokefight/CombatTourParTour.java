@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CombatTourParTour {
 	
+	
 	public static void clearScreen() {
 		for(int i=0; i<60; i++) System.out.println();
 	}
@@ -23,7 +24,7 @@ public class CombatTourParTour {
 
 		int vie = 0;
 		int attaqueMax = 0;
-
+		
 		Boss boss = null;
 		
 		if(Menu.nbBossBattu == 0) {
@@ -60,7 +61,7 @@ public class CombatTourParTour {
 			System.out.println("-------------------------------------------------------");
 
 			System.out.println("\t# ATTENTION ! Un " + boss.getNom() + " est apparu ! #\n");
-			System.out.println("\t"+perso.getNom()+"à toi de jouer !\n");
+			System.out.println("\t"+perso.getNom()+" à toi de jouer !\n");
 
 			while (boss.getVie()>0){
 
@@ -77,40 +78,42 @@ public class CombatTourParTour {
 				System.out.println("----------------------------------------------------------------\n");
 
 				String clavier = sc.nextLine();
+				clearScreen();
+				System.out.println("----------------------------------------------------------------\n");
 
 				if(clavier.equals("1")){
-					int dommagePerso = perso.attaque();
-					int dommageBoss = boss.attaque();
+					int dommagePerso = efficaciteJoueur(perso, boss, perso.attaque());
+					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
 
 					boss.vieRestante(dommagePerso);
 					perso.vieRestante(dommageBoss);
-					clearScreen();
-					System.out.println("----------------------------------------------------------------\n");
+					
+					
 					System.out.println("\t> Vous frappez " + boss.getNom() +" et infligez "+ dommagePerso + " degats.");
 					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
 				if(clavier.equals("2")){
 					perso.soin(perso.getSoin());
-					int dommageBoss = boss.attaque();
+					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
 
 					perso.vieRestante(dommageBoss);
-
-					System.out.println("----------------------------------------------------------------\n");
+					
+				
 					System.out.println("\t> Vous vous soignez et recevez "+ perso.getSoin()+" points de vie.");
 					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
 				if(clavier.equals("3")){
-					int dommagePerso = perso.getDmgVamp();
+					int dommagePerso = efficaciteJoueur(perso, boss, perso.getDmgVamp());
 					perso.soin(perso.getHealVamp());
-					int dommageBoss = boss.attaque();
+					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
 
 					boss.vieRestante(dommagePerso);
 					perso.vieRestante(dommageBoss);
-
-					System.out.println("----------------------------------------------------------------\n");
-					System.out.println("\t> Vous frapper " + boss.getNom() +" et infligez "+ dommagePerso + " degats et vous vous soignez de "+ perso.getHealVamp()+"points de vie.");
+					
+					
+					System.out.println("\t> Vous frapper " + boss.getNom() +" et infligez "+ dommagePerso + " degats et vous vous soignez de "+ perso.getHealVamp()+" points de vie.");
 					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
@@ -135,5 +138,100 @@ public class CombatTourParTour {
 			
 			}
 		}
+	}
+	
+	public static int efficaciteJoueur(Personnage perso, Boss boss, int dmg) {
+		if(boss.getType() == Type.PLANTE) {
+			if(perso.getType() == Type.EAU) {
+				System.out.println("\t> Ce n'est pas tres efficace...");
+				return (int) (dmg * 0.30);
+			}		
+			if(perso.getType() == Type.PLANTE) {
+				return dmg;
+			}
+			
+			if(perso.getType() == Type.FEU) {
+				System.out.println("\t> C'est super efficace !");
+				return (int) (dmg * 1.30);
+			}
+		}
+		
+		if(boss.getType() == Type.EAU) {
+			if(perso.getType() == Type.FEU) {
+				System.out.println("\t> Ce n'est pas tres efficace...");
+				return (int) (dmg * 0.30);
+			}
+			
+			if(perso.getType() == Type.EAU) {
+				return dmg;
+			}
+			
+			if(perso.getType() == Type.PLANTE) {
+				System.out.println("\t> C'est super efficace !");
+				return (int) (dmg * 1.30);
+			}
+		}
+		
+		if(boss.getType() == Type.FEU) {
+			if(perso.getType() == Type.PLANTE) {
+				System.out.println("\t> Ce n'est pas tres efficace...");
+				return (int) (dmg * 0.30);
+			}
+			
+			if(perso.getType() == Type.FEU) {
+				return dmg;
+			}
+			
+			if(perso.getType() == Type.EAU) {
+				System.out.println("\t> C'est super efficace !");
+				return (int) (dmg * 1.30);
+			}
+		}
+		return 0;
+	}
+	
+	public static int efficaciteBoss(Personnage perso, Boss boss, int dmg) {
+		if(boss.getType() == Type.PLANTE) {
+			if(perso.getType() == Type.EAU) {
+				return (int) (dmg * 1.30);
+			}
+			
+			if(perso.getType() == Type.PLANTE) {
+				return dmg;
+			}
+			
+			if(perso.getType() == Type.FEU) {
+				return (int) (dmg * 0.30);
+			}
+		}
+		
+		if(boss.getType() == Type.EAU) {
+			if(perso.getType() == Type.FEU) {
+				return (int) (dmg * 1.30);
+			}
+			
+			if(perso.getType() == Type.EAU) {
+				return dmg;
+			}
+			
+			if(perso.getType() == Type.PLANTE) {
+				return (int) (dmg * 0.30);
+			}
+		}
+		
+		if(boss.getType() == Type.FEU) {
+			if(perso.getType() == Type.PLANTE) {
+				return (int) (dmg * 1.30);
+			}
+			
+			if(perso.getType() == Type.FEU) {
+				return dmg;
+			}
+			
+			if(perso.getType() == Type.EAU) {
+				return (int) (dmg * 0.30);
+			}
+		}
+		return 0;
 	}
 }
