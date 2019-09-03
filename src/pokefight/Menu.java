@@ -14,6 +14,12 @@ public class Menu {
 		return scan.nextLine();
 	}
 
+	static boolean boss1 = false;
+	static boolean boss2 = false;
+	static boolean boss3 = false;
+	static boolean boss4 = false;
+	static boolean boss5 = false;
+	
 	int score = 0;
 	static int nbBoss = 5;
 	static int nbBossBattu = 0;
@@ -62,11 +68,7 @@ public class Menu {
 		System.out.println(classement);
 		System.out.println(quitter);
 		
-		boolean boss1 = false;
-		boolean boss2 = false;
-		boolean boss3 = false;
-		boolean boss4 = false;
-		boolean boss5 = false;
+		
 
 		boolean ok = false;
 		while(!ok) {
