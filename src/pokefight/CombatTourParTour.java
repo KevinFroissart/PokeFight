@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CombatTourParTour {
 	
+	private static int score;
 	
 	public static void clearScreen() {
 		for(int i=0; i<60; i++) System.out.println();
@@ -21,7 +22,7 @@ public class CombatTourParTour {
 		Boss bellupine = new Boss("Bellupine",500,Type.EAU, "Pistolet à O", 50,60);
 		Boss zebibron = new Boss("Zébibron",650,Type.FEU, "Jugement", 25,70);
 		Personnage perso = ChoixPerso.PersoChoisi();
-
+		
 
 		int vie = 0;
 		int attaqueMax = 0;
@@ -89,6 +90,7 @@ public class CombatTourParTour {
 				if(clavier.equals("1")){
 					int dommagePerso = efficaciteJoueur(perso, boss, perso.attaque());
 					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
+					score = score + dommagePerso;
 
 					boss.vieRestante(dommagePerso);
 					perso.vieRestante(dommageBoss);
@@ -101,7 +103,7 @@ public class CombatTourParTour {
 				if(clavier.equals("2")){
 					perso.soin(perso.getSoin());
 					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
-
+					
 					perso.vieRestante(dommageBoss);
 					
 				
@@ -113,7 +115,8 @@ public class CombatTourParTour {
 					int dommagePerso = efficaciteJoueur(perso, boss, perso.getDmgVamp());
 					perso.soin(perso.getHealVamp());
 					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
-
+					score = score + dommagePerso;
+					
 					boss.vieRestante(dommagePerso);
 					perso.vieRestante(dommageBoss);
 					
@@ -124,15 +127,12 @@ public class CombatTourParTour {
 				
 				else if(clavier.equals("4")){
 					System.out.println("Vous abandonnez le combat.");
-					running = false;
-					Menu.reset();
 					break;
 				}
 
 				if(perso.getVie()<=0) {
 					System.out.println("Vous avez perdu, vous devez retourner au debut :(");
 					running = false;
-					Menu.reset();
 					break;
 
 				}
@@ -140,7 +140,8 @@ public class CombatTourParTour {
 
 			}
 			if (boss.getVie() <=0) { 
-				System.out.println(boss +" n'a plus de vie, vous avez vaincu "+ boss + ".");
+				System.out.println(boss  +" n'a plus de vie, vous avez vaincu "+ boss + ".");
+				System.out.println("Score obtenu : "+(score+perso.getVie())); 
 				Menu.setNbBossBattu(Menu.getNbBossBattu()+1);
 			running = false;
 			
