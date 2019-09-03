@@ -13,9 +13,9 @@ public class ChoixPerso {
 
 	public static void main(String[] args) {
 		
-		Personnage pikachou = new Personnage("Pikachou", 500, Type.FEU, "Attaque",10, 20, "Soin",20, "Vamp",20);
-		Personnage herbisoux = new Personnage("Herbisoux", 500, Type.PLANTE, "Attaque", 10, 20, "Soin",20, "Vamp",20);
-		Personnage magicarpette = new Personnage("Magicarpette", 500, Type.EAU, "Attaque", 10, 20, "Soin",20, "Vamp",20);		
+		Personnage pikachou = new Personnage("Pikachou", 500, Type.FEU, "Incendie",10, 20, "Foyer",20, "Deplacement thermique",20);
+		Personnage herbisoux = new Personnage("Herbisoux", 500, Type.PLANTE, "Bucheronnage", 10, 20, "Synthese",20, "Vampigrain",20);
+		Personnage magicarpette = new Personnage("Magicarpette", 500, Type.EAU, "Torpille", 10, 20, "Eponge",20, "Trampette",20);		
 		System.out.println("Choisissez votre personnage :");
 		
 		System.out.println("PokeFighter 1 : Pikachou [FEU]");
