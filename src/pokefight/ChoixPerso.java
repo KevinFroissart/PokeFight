@@ -18,6 +18,7 @@ public class ChoixPerso {
 		Personnage magicarpette = new Personnage("Magicarpette", 500, Type.EAU, "Torpille", 10, 20, "Eponge",20, "Trampette",20);		
 		System.out.println("Choisissez votre personnage :");
 		
+		
 		System.out.println("PokeFighter 1 : Pikachou [FEU]");
 		System.out.println("PokeFighter 2 : Herbisoux [PLANTE]");
 		System.out.println("PokeFighter 3 : Magicarpette [EAU]");
