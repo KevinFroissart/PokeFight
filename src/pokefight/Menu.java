@@ -51,7 +51,7 @@ public class Menu {
 			+ "Si jamais tu perd toute ta vie lors d'un combat\n"
 			+ "tu dois retourner à l'entrée et tout recommencer ! \n"
 			+ "Depuis le menu principal, tu peux lancer une nouvelle partie, consulter tes précédents records, \n"
-			+ "ta progression ou quitter le jeu.\n";
+			+ "ta progression ou quitter le jeu. \n";
 
 	public static void main(String args[]) throws IOException, InterruptedException {
 
