@@ -119,12 +119,14 @@ public class CombatTourParTour {
 					break;
 
 				}
+				running = false;
 
 			}
 			if (vieBoss <=0) { 
 				System.out.println(boss +" n'a plus de vie, vous avez vaincu "+ boss + ".");
 				Menu.setNbBossBattu(Menu.getNbBossBattu()+1);
 			running = false;
+			
 			}
 		}
 	}
