@@ -119,7 +119,6 @@ public class CombatTourParTour {
 				
 				else if(clavier.equals("4")){
 					System.out.println("Vous abandonnez le combat.");
-					Menu.setNbBossBattu(0);
 					break;
 				}
 
