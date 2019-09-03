@@ -145,8 +145,7 @@ public class CombatTourParTour {
 			if(perso.getType() == Type.EAU) {
 				System.out.println("\t> Ce n'est pas tres efficace...");
 				return (int) (dmg * 0.30);
-			}
-			
+			}		
 			if(perso.getType() == Type.PLANTE) {
 				return dmg;
 			}
