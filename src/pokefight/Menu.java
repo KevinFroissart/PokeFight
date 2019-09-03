@@ -177,7 +177,7 @@ public class Menu {
 
 					if(nbBossBattu != 5) {System.out.println("Vous avez vaincu ce Boss légendaire ! Le suivant n'a qu'à bien se tenir !\n\n\n");
 					Menu.main(args);
-					}
+					} 
 				} 
 			} else {
 				System.err.println("Entrez un nombre en 1 et 5 !");
