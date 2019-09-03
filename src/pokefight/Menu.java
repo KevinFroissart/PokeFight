@@ -91,10 +91,10 @@ public class Menu {
 					
 					switch(i) {
 					case 0: if(boss1) System.out.print("OK");
-					case 1: if(boss1) System.out.print("OK");
-					case 2: if(boss1) System.out.print("OK");
-					case 3: if(boss1) System.out.print("OK");
-					case 4: if(boss1) System.out.print("OK");
+					case 1: if(boss2) System.out.print("OK");
+					case 2: if(boss3) System.out.print("OK");
+					case 3: if(boss4) System.out.print("OK");
+					case 4: if(boss5) System.out.print("OK");
 					System.out.println();
 					}
 				}
@@ -142,6 +142,7 @@ public class Menu {
 				if (nbBossBattu == 4){boss4 = true; boss3 = false;}
 				if (nbBossBattu == 5){boss5 = true; boss4 = false;}
 			
+				System.out.println("Vous avez vaincu ce Boss légendaire ! Le suivant n'a qu'à bien se tenir !\n\n\n");
 				Menu.main(args);
 			}
 		}
