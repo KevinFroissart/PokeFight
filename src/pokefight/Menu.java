@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Menu {
 
 	public static void clearScreen() {
-		for(int i=0; i<30; i++) System.out.println();
+		for(int i=0; i<60; i++) System.out.println();
 	}
 
 	public static String scann() {
@@ -132,7 +132,7 @@ public class Menu {
 					}
 					
 				}
-				
+				ChoixPerso.main(args);
 				CombatTourParTour.main(args);
 				//System.out.println("pokemon vs pokemon\n-----------------------------");//Jauge de vie
 				

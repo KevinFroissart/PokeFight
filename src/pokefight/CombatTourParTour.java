@@ -3,6 +3,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CombatTourParTour {
+	
+	public static void clearScreen() {
+		for(int i=0; i<60; i++) System.out.println();
+	}
 
 	public static void main(String[] args) {
 
@@ -10,12 +14,12 @@ public class CombatTourParTour {
 		Scanner sc = new Scanner(System.in);
 		Random rand = new Random();
 
-		Boss turtuna = new Boss("Turtuna",400,Type.EAU,35,55);
-		Boss jaguabite = new Boss("Jaguabite",450,Type.FEU, 45,60);
-		Boss salamord = new Boss("Salamord",480,Type.PLANTE,45,65);
-		Boss bellupine = new Boss("Bellupine",500,Type.EAU,50,60);
-		Boss zebibron = new Boss("Zébibron",650,Type.FEU,25,70);
-		Personnage perso = new Personnage(Menu.nomJoueur, 500, Type.PLANTE,"attaque", 40, 60,"soignage", 35,"vamp", 25);
+		Boss turtuna = new Boss("Turtuna",400,Type.EAU, "Jet d'eau", 35,55);
+		Boss jaguabite = new Boss("Jaguabite",450,Type.FEU, "Lance flamme", 45,60);
+		Boss salamord = new Boss("Salamord",480,Type.PLANTE, "Tranche herbe", 45,65);
+		Boss bellupine = new Boss("Bellupine",500,Type.EAU, "Pistolet à O", 50,60);
+		Boss zebibron = new Boss("Zébibron",650,Type.FEU, "Jugement", 25,70);
+		Personnage perso = ChoixPerso.PersoChoisi();
 
 		int vie = 0;
 		int attaqueMax = 0;
@@ -56,13 +60,15 @@ public class CombatTourParTour {
 			System.out.println("-------------------------------------------------------");
 
 			System.out.println("\t# ATTENTION ! Un " + boss.getNom() + " est apparu ! #\n");
+			System.out.println("\t"+perso.getNom()+"à toi de jouer !\n");
 
 			while (boss.getVie()>0){
 
 				System.out.println("\t Votre vie : " + perso.getVie());
-				System.out.println("\t Le " + boss.getNom() + " a "+ boss.getVie()+" point de vie");
-				System.out.println("\n\t quelle action ? \n");
-				System.out.println("	Attaquer:\n");
+				System.out.println("\t Le " + boss.getNom() + " a "+ boss.getVie()+" point de vie\n");
+				System.out.println("----------------------------------------------------------------\n");
+				System.out.println("\n\t Que doit faire "+perso.getNom()+" ?\n");
+				System.out.println("	Compétences :\n");
 				System.out.print("\t1. "+perso.getComp1());
 				System.out.print("\t2. "+perso.getComp2());
 				System.out.println("\t3. "+perso.getComp3());
@@ -78,10 +84,10 @@ public class CombatTourParTour {
 
 					boss.vieRestante(dommagePerso);
 					perso.vieRestante(dommageBoss);
-
+					clearScreen();
 					System.out.println("----------------------------------------------------------------\n");
-					System.out.println("\t> vous frapper " + boss.getNom() +" et causez "+ dommagePerso + " dmg");
-					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
+					System.out.println("\t> Vous frappez " + boss.getNom() +" et infligez "+ dommagePerso + " degats.");
+					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
 				if(clavier.equals("2")){
@@ -91,8 +97,8 @@ public class CombatTourParTour {
 					perso.vieRestante(dommageBoss);
 
 					System.out.println("----------------------------------------------------------------\n");
-					System.out.println("\t> vous vous soignez et recevez "+ perso.getSoin());
-					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
+					System.out.println("\t> Vous vous soignez et recevez "+ perso.getSoin()+" points de vie.");
+					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
 				if(clavier.equals("3")){
@@ -104,8 +110,8 @@ public class CombatTourParTour {
 					perso.vieRestante(dommageBoss);
 
 					System.out.println("----------------------------------------------------------------\n");
-					System.out.println("\t> vous frapper " + boss.getNom() +" et causez "+ dommagePerso + " dmg et vous soignez de "+ perso.getHealVamp()+"point de vie");
-					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
+					System.out.println("\t> Vous frapper " + boss.getNom() +" et infligez "+ dommagePerso + " degats et vous vous soignez de "+ perso.getHealVamp()+"points de vie.");
+					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
 				else if(clavier.equals("4")){
@@ -114,7 +120,7 @@ public class CombatTourParTour {
 				}
 
 				if(vie<=0) {
-					System.out.println("Vous avez perdu , vous devez retourner au debut :(");
+					System.out.println("Vous avez perdu, vous devez retourner au debut :(");
 					running = false;
 					break;
 
