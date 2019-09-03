@@ -59,7 +59,7 @@ public class CombatTourParTour {
 
 			while (boss.getVie()>0){
 
-				System.out.println("\t Votre vie : " + vie);
+				System.out.println("\t Votre vie : " + perso.getVie());
 				System.out.println("\t Le " + boss + " a "+ boss.getVie()+" point de vie");
 				System.out.println("\n\t quelle action ? ");
 				System.out.println("\t1. Attaquer");
