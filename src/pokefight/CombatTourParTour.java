@@ -124,12 +124,15 @@ public class CombatTourParTour {
 				
 				else if(clavier.equals("4")){
 					System.out.println("Vous abandonnez le combat.");
+					running = false;
+					Menu.reset();
 					break;
 				}
 
 				if(perso.getVie()<=0) {
 					System.out.println("Vous avez perdu, vous devez retourner au debut :(");
 					running = false;
+					Menu.reset();
 					break;
 
 				}
