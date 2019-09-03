@@ -61,9 +61,13 @@ public class CombatTourParTour {
 
 				System.out.println("\t Votre vie : " + perso.getVie());
 				System.out.println("\t Le " + boss + " a "+ boss.getVie()+" point de vie");
-				System.out.println("\n\t quelle action ? ");
-				System.out.println("\t1. Attaquer");
-				System.out.println("\t2. Abandonner");
+				System.out.println("\n\t quelle action ? \n");
+				System.out.println("	Attaquer:\n");
+				System.out.print("\t1. Attaque 1");
+				System.out.print("\t2. Attaque 2");
+				System.out.println("\t3. Attaque 3");
+				System.out.println();
+				System.out.println("\t4. Abandonner");
 				System.out.println("----------------------------------------------------------------\n");
 
 				String clavier = sc.nextLine();
@@ -79,8 +83,8 @@ public class CombatTourParTour {
 					System.out.println("\t> vous frapper " + boss.getNom() +" et causez "+ dommagePerso + " dmg");
 					System.out.println("\t> " + boss.getNom() +" riposte et vous cause " +  dommageBoss +" dmg\n");
 				}
-
-				else if(clavier.equals("2")){
+				
+				else if(clavier.equals("4")){
 					System.out.println("Vous abandonnez le combat.");
 					break;
 				}
