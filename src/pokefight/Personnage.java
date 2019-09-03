@@ -28,7 +28,15 @@ public class Personnage extends Entite {
 	public int attaque() {
 		return (int) ((Math.random() * (this.dmgMax - this.dmgMin)) + this.dmgMin);
 	}
-
+	
+	public void soin(int soin) {
+		if((this.getVie() + soin) < this.getVieMax()) {
+			this.setVie(this.getVie()+soin);
+		} else {
+			this.setFullVie();
+		}	
+	}
+	
 	public int getSoin() {
 		return soin;
 	}
