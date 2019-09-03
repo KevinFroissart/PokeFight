@@ -13,7 +13,7 @@ public class Score {
 	
 	public static String FileName = "ressources/classement.csv";
 	
-	public static void NewScore(String joueur, String score) throws IOException {
+	/*public static void NewScore(String joueur, String score) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(FileName))
 		BufferedReader read = new BufferedReader(new FileReader(FileName));
 		List<String[]> list = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Score {
 		classement.close();
 
 	}
-	
+	*/
 	public static List<String[]> Affichage(String separator) {
 	    try (BufferedReader reader = new BufferedReader(new FileReader(FileName))){
 	        List<String[]> list = new ArrayList<>();
@@ -57,7 +57,7 @@ public class Score {
 	public static void main(String args[]) throws IOException {
 
 		BufferedReader read;
-		NewScore("Test1", "40");
+		//NewScore("Test1", "40");
 
 		try {
 			read = new BufferedReader(new FileReader(FileName));
