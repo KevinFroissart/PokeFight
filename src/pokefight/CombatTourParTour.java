@@ -138,7 +138,6 @@ public class CombatTourParTour {
 					System.out.println("Vous avez perdu, vous devez retourner au debut :(");
 					System.out.println("Score obtenu : "+score); 
 					Score.NewScore(Menu.nomJoueur, score+"");
-					score = 0;
 					running = false;
 					Menu.reset();
 					break;
