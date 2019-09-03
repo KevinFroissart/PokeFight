@@ -44,14 +44,14 @@ public class Menu {
 	static String quitter = "5 - Quitter";
 	static String MRelges = "            -------------------------\n            | REGLES DE POKEFIGHTER |\n            -------------------------\n" 
 			+ "Bienvenu dans PokéFight \n"  
-			+ "Choisissez votre PokéFighter et affrontez tous les boss pour gagner. \n" 
+			+ "Choisis ton PokéFighter et affronte tous les boss pour gagner. \n" 
 			+ "Chaque Pokéfighter et chaque ennemies possèdent des types parmis \n "
-			+ "les types EAU,\n"
-			+ "final de ce donjon. \n"
-			+ "Mais attention à ne pas vous retrouver sans point de vie avant la fin,\n"
-			+ "ou vous devrez retourner à l'entrée ! \n"
-			+ "Depuis le menu principal, vous pouvez lancer une nouvelle partie, consulter vos précédents records, \n"
-			+ "voir les crédits ou quitter le jeu.\n";
+			+ "les types EAU, PLANTES et FEU.\n"
+			+ "Tu es coincé dans un donjon et dois t'aider de tes PokéFitghter pour en sortir\n"
+			+ "Si jamais tu perd toute ta vie lors d'un combat\n"
+			+ "tu dois retourner à l'entrée et tout recommencer ! \n"
+			+ "Depuis le menu principal, tu peux lancer une nouvelle partie, consulter tes précédents records, \n"
+			+ "ta progression ou quitter le jeu.\n";
 
 	public static void main(String args[]) throws IOException, InterruptedException {
 
