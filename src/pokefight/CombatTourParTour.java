@@ -54,7 +54,8 @@ public class CombatTourParTour {
 
 		int vieBoss = 100;
 		int attaqueMaxBoss = 15;
-
+		int vieDispo = 2;
+		
 		boolean running = true;
 
 		System.out.println("Vous rentrez en combat !");
@@ -76,7 +77,7 @@ public class CombatTourParTour {
 				System.out.println("\n\t Que doit faire "+perso.getNom()+" ?\n");
 				System.out.println("	Compétences :\n");
 				System.out.print("\t1. "+perso.getComp1());
-				System.out.print("\t2. "+perso.getComp2());
+				System.out.print("\t2. "+perso.getComp2() + "("+vieDispo+")");
 				System.out.println("\t3. "+perso.getComp3());
 				System.out.println();
 				System.out.println("\t4. Abandonner");
@@ -101,12 +102,13 @@ public class CombatTourParTour {
 					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");
 				}
 				
-				if(clavier.equals("2")){
+				if(clavier.equals("2") && vieDispo > 0){
 					perso.soin(perso.getSoin());
 					int dommageBoss = efficaciteBoss(perso, boss, boss.attaque());
 					
 					perso.vieRestante(dommageBoss);
 					
+					vieDispo--;
 				
 					System.out.println("\t> Vous vous soignez et recevez "+ perso.getSoin()+" points de vie.");
 					System.out.println("\t> " + boss.getNom() +" riposte avec "+boss.getComp1()+" et vous cause " +  dommageBoss +" degats.\n");

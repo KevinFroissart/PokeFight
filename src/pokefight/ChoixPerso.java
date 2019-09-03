@@ -15,7 +15,7 @@ public class ChoixPerso {
 
 		Personnage pikachou = new Personnage("Pikachou", 450, Type.FEU, "Incendie",55, 65, "Foyer",50, "Deplacement thermique",20);
 		Personnage herbisoux = new Personnage("Herbisoux", 500, Type.PLANTE, "Bucheronnage", 40, 50, "Synthese",60, "Vampigrain",35);
-		Personnage magicarpette = new Personnage("Magicarpette", 600, Type.EAU, "Torpille", 35, 55, "Eponge",55, "Trampette",20);		
+		Personnage magicarpette = new Personnage("Magicarpette", 600, Type.EAU, "Torpille", 35, 55, "Eponge",70, "Trampette",20);		
 		System.out.println("Choisissez votre personnage :");
 
 
