@@ -30,6 +30,7 @@ public class Menu {
 			"                                                      /$$  \\ $$                    \n" + 
 			"                                                     |  $$$$$$/                    \n" + 
 			"                                                      \\______/                     ";
+	
 	static String jouer = "1 - Jouer";
 	static String regles = "2 - Règles";
 	static String progression = "3 - Progression";
@@ -46,7 +47,7 @@ public class Menu {
 			               + "Depuis le menu principal, vous pouvez lancer une nouvelle partie, consulter vos précédents records, \n"
 			               + "voir les crédits ou quitter le jeu.\n";
 
-	public static void main(String args[]) throws IOException {
+	public static void main(String args[]) throws IOException, InterruptedException {
 		
 		//clearScreen();
 		
@@ -54,6 +55,7 @@ public class Menu {
 
 		System.err.println(titre);
 		System.out.println();
+		Thread.sleep(100);
 		System.out.println(jouer);
 		System.out.println(regles);
 		System.out.println(progression);
