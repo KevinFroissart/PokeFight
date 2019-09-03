@@ -14,21 +14,26 @@ public class Score {
 	public static String FileName = "ressources/classement.csv";
 	
 	public static void NewScore(String joueur, String score) throws IOException {
-		BufferedWriter classement = new BufferedWriter(new FileWriter(FileName));
+		BufferedReader reader = new BufferedReader(new FileReader(FileName))
 		BufferedReader read = new BufferedReader(new FileReader(FileName));
+		List<String[]> list = new ArrayList<>();
+        String line = "";
+        while((line = reader.readLine()) != null){
+            String[] array = line.split(separator);
+            list.add(array);
+        }
+		BufferedWriter classement = new BufferedWriter(new FileWriter(FileName));
 		int compteur = 0;
 		while (read.readLine() != null) {
 			 compteur++;
 		}
 		read.close();
-		classement.write(joueur);
-		classement.write(";");
-		classement.write(score);
-		classement.write("\n");
-		/*classement.append("test2");
-		classement.append(";");
-		classement.append("54");
-		classement.append("\n");*/
+
+		classement.append(joueur);
+		classement.append(",");
+		classement.append(score);
+		classement.append("\n");
+		
 		classement.flush();
 		classement.close();
 
@@ -50,7 +55,10 @@ public class Score {
 	}
 
 	public static void main(String args[]) throws IOException {
+
 		BufferedReader read;
+		NewScore("Test1", "40");
+
 		try {
 			read = new BufferedReader(new FileReader(FileName));
 			List<String[]> list = Affichage(",");
