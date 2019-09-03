@@ -10,32 +10,19 @@ ME :**
 **Sprint
 1 et 2 :**
 
-#
-Rétrospective de sprint 1 et 2 :
+# Rétrospective de sprint 1 et 2 :
 
 Nom
 du scrum master du sprint :
 
-##
-Ce que nous avons fait durant ce sprint
+## Ce que nous avons fait durant ce sprint
+- Consulter les règles du jeudi
+- Choisir son nom
+- Naviguer dans un menu
+- Consulter sa progression
+- Système d’attaque basique
 
-	-Consulter
-les règles du jeudi
-
-	-Choisir
-son nom
-
-	-Naviguer
-dans un menu
-
-	-Consulter
-sa progression
-
-	-Système
-d’attaque basique
-
-##
-Ce que nous allons faire durant le prochain sprint
+## Ce que nous allons faire durant le prochain sprint
 
 	-Choisir
 ses attaques
