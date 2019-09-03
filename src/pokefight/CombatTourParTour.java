@@ -1,4 +1,5 @@
 package pokefight;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,7 +11,7 @@ public class CombatTourParTour {
 		for(int i=0; i<60; i++) System.out.println();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -127,12 +128,18 @@ public class CombatTourParTour {
 				
 				else if(clavier.equals("4")){
 					System.out.println("Vous abandonnez le combat.");
+					running = false;
+					Menu.reset();
 					break;
 				}
+				
 
 				if(perso.getVie()<=0) {
 					System.out.println("Vous avez perdu, vous devez retourner au debut :(");
+					System.out.println("Score obtenu : "+score); 
+					Score.NewScore(Menu.nomJoueur, score+"");
 					running = false;
+					Menu.reset();
 					break;
 
 				}
@@ -140,8 +147,9 @@ public class CombatTourParTour {
 
 			}
 			if (boss.getVie() <=0) { 
-				System.out.println(boss  +" n'a plus de vie, vous avez vaincu "+ boss + ".");
-				System.out.println("Score obtenu : "+(score+perso.getVie())); 
+				System.out.println(boss.getNom()  +" n'a plus de vie, vous avez vaincu "+ boss.getNom() + ".");
+				score = score+perso.getVie();
+				System.out.println("Score obtenu : "+score); 
 				Menu.setNbBossBattu(Menu.getNbBossBattu()+1);
 			running = false;
 			
