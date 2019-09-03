@@ -19,7 +19,7 @@ public class Menu {
 	static boolean boss3 = false;
 	static boolean boss4 = false;
 	static boolean boss5 = false;
-	//
+	
 	int score = 0;
 	static int nbBoss = 5;
 	static int nbBossBattu = 0;
