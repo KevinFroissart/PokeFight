@@ -148,6 +148,10 @@ public class CombatTourParTour {
 				running = false;
 
 			}
+			if(perso.getVie()<=0) {
+				
+				break;
+			}
 			if (boss.getVie() <=0) { 
 				System.out.println(boss.ascii()+"\n");
 				System.out.println(boss.getNom()  +" n'a plus de vie, vous avez vaincu "+ boss.getNom() + ".");
