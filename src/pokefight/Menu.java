@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Menu {
 
-	
 	public static void clearScreen() {
 		for(int i=0; i<30; i++) System.out.println();
 	}
