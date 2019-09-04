@@ -2,7 +2,7 @@ p { margin-bottom: 0.25cm; line-height: 120%; }
 
 **GROUPE 21**
 
-**POKEFIGHT **
+**POKEFIGHT**
 
 **READ ME :**
 
@@ -25,7 +25,7 @@ du scrum master du sprint :
 - Combat contre une IA basique
 - Sauvegarde du score
 
-##PDCA
+## PDCA
 
 ### Qu’avons nous testé durant ce sprint ?
 
