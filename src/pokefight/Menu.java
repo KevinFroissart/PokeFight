@@ -199,6 +199,7 @@ public class Menu {
 							}
 						}
 					}
+					
 					ChoixPerso.main(args);
 					CombatTourParTour.main(args);
 					//System.out.println("pokemon vs pokemon\n-----------------------------");//Jauge de vie
