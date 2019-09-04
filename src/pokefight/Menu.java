@@ -41,7 +41,7 @@ public class Menu {
 	static String regles = "2 - Règles";
 	static String progression = "3 - Progression";
 	static String classement = "4 - Classement";
-	static String quitter = "5 - Quitter";
+	static String pokefighter = "5 - Pokéfighter";
 	static String MRelges = "            -------------------------\n            | REGLES DE POKEFIGHTER |\n            -------------------------\n" 
 			+ "Bienvenu dans PokéFight \n"  
 			+ "Choisis ton PokéFighter et affronte tous les boss pour gagner. \n" 
@@ -51,7 +51,7 @@ public class Menu {
 			+ "Si jamais tu perd toute ta vie lors d'un combat\n"
 			+ "tu dois retourner à l'entrée et tout recommencer ! \n"
 			+ "Depuis le menu principal, tu peux lancer une nouvelle partie, consulter tes précédents records, \n"
-			+ "ta progression ou quitter le jeu. \n";
+			+ "ta progression ou renommer tes PokéFighter. \n";
 
 	public static void main(String args[]) throws IOException, InterruptedException {
 
@@ -66,7 +66,7 @@ public class Menu {
 		System.out.println(regles);
 		System.out.println(progression);
 		System.out.println(classement);
-		System.out.println(quitter);
+		System.out.println(pokefighter);
 
 
 
@@ -80,7 +80,35 @@ public class Menu {
 				int scaned = Integer.parseInt(scanedT);
 				ok = true;
 
-				if(scaned == 5) Runtime.getRuntime().exec("taskkill /F /IM process.exe");;
+				if(scaned == 5) {
+
+					System.out.println("Entrez un nombre en 1 et 3 pour renommer le personnage de votre choix\n"
+							+ "Entrez 0 pour revenir au menu");
+					System.out.println();
+
+					boolean okN = false;
+					while(!okN) {
+						String scaneN = scann();
+						if(scaneN.matches("[0-3]")) {
+							okN = true;
+							if(scaneN.equals("0")) Menu.main(args);
+							if(scaneN.equals("1")) {
+								System.out.println("Donnez un nouveau nom a ");
+								String nom1 = scann();
+							}
+							if(scaneN.equals("2")) {
+								System.out.println("Donnez un nouveau nom a ");
+								String nom2 = scann();
+							}
+							if(scaneN.equals("3")) {
+								System.out.println("Donnez un nouveau nom a ");
+								String nom3 = scann();
+							}
+						} else {
+							System.err.println("Entrez un chiffre en 1 et 3 !");
+						}
+					}
+				}
 
 				if(scaned == 4) {
 					Score.main(args);
