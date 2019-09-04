@@ -54,7 +54,7 @@ public abstract class Entite {
 	
 	public String ascii() {
 		String res = "";
-		if(this.nom.equals("Pikachou")) {
+		if(this.nom.equals(ChoixPerso.getAllNom()[0])) {
 			res = "           ,     ,_\n" + 
 			"           |`\\    `;;,            ,;;'\n" + 
 			"           |  `\\    \\ '.        .'.'\n" + 
@@ -73,7 +73,7 @@ public abstract class Entite {
 			"                    \\    /  __   .-'\n" + 
 			"                     \\,_/-\"`  `-'";
 		}
-		if(this.nom.equals("Herbisoux")) {
+		if(this.nom.equals(ChoixPerso.getAllNom()[1])) {
 			res = "             `;,;.;,;.;.'\n" + 
 					"              ..:;:;::;: \n" + 
 					"        ..--''' '' ' ' '''--.  \n" + 
@@ -92,7 +92,7 @@ public abstract class Entite {
 					"      \\   `:\"\"\"-------'\"\"' |   |\n" + 
 					"       ',-,-',             .'-=,=,";
 		}
-		if(this.nom.equals("Magicarpette")) {
+		if(this.nom.equals(ChoixPerso.getAllNom()[2])) {
 			res =   "              .----..        .'.  \n" + 
 					"          _.-~  __   ~~~...'' .'  \n" + 
 					"        .'    .~  '''...  ..''    \n" + 
