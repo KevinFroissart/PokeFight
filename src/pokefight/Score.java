@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Score {
 
-	public static String FileName = "ressources/classement.csv";
+	public static String FileName = "src/ressources/classement.csv";
 
 
 	public static List<String[]> trie(List<String[]> list) {
