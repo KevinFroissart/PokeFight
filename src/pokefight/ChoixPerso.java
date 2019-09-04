@@ -1,6 +1,5 @@
 package pokefight;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ChoixPerso {
@@ -154,8 +153,12 @@ public class ChoixPerso {
 		if(puissance<11) {
 			puissance = 10;
 		}
+		
+		if(vie<11) {
+			vie = 10;
+		}
 
-		Personnage custom = new Personnage(nom, vie*10, type, comp1, puissance-10, puissance+10, comp2, (int) (regen*2.5), comp3, (int) (regen*2));
+		Personnage custom = new Personnage(nom, vie*10, type, comp1, puissance-10, puissance+10, comp2, (int) (regen*2.5), comp3, (int) (regen*1.5));
 		return custom;
 	}
 }
