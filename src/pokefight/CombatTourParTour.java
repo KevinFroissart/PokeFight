@@ -149,6 +149,7 @@ public class CombatTourParTour {
 				running = false;
 
 			}
+			
 			if(perso.getVie()<=0) {
 				
 				break;
