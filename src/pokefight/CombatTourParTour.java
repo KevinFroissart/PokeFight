@@ -141,6 +141,7 @@ public class CombatTourParTour {
 					System.out.println("Score obtenu : "+score); 
 					Score.NewScore(Menu.nomJoueur, score+"");
 					running = false;
+					perso.setFullVie();
 					Menu.reset();
 					break;
 
@@ -156,6 +157,7 @@ public class CombatTourParTour {
 				System.out.println(boss.ascii()+"\n");
 				System.out.println(boss.getNom()  +" n'a plus de vie, vous avez vaincu "+ boss.getNom() + ".");
 				score = score+perso.getVie();
+				perso.setFullVie();
 				System.out.println("Score obtenu : "+score); 
 				Menu.setNbBossBattu(Menu.getNbBossBattu()+1);
 			running = false;
