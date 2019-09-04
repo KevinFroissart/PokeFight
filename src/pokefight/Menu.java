@@ -84,8 +84,11 @@ public class Menu {
 
 					System.out.println("Entrez un nombre en 1 et 3 pour renommer le personnage de votre choix\n"
 							+ "Entrez 0 pour revenir au menu");
-					System.out.println();
 
+					String listNom[] = ChoixPerso.getAllNom();
+					System.out.println("1 : " + listNom[0]);
+					System.out.println("2 : " + listNom[1]);
+					System.out.println("3 : " + listNom[2]);
 					boolean okN = false;
 					while(!okN) {
 						String scaneN = scann();
@@ -93,21 +96,24 @@ public class Menu {
 							okN = true;
 							if(scaneN.equals("0")) Menu.main(args);
 							if(scaneN.equals("1")) {
-								System.out.println("Donnez un nouveau nom a ");
+								System.out.println("Donnez un nouveau nom a " + listNom[0]);
 								String nom1 = scann();
+								ChoixPerso.setNom1(nom1);
 							}
 							if(scaneN.equals("2")) {
-								System.out.println("Donnez un nouveau nom a ");
+								System.out.println("Donnez un nouveau nom a " + listNom[1]);
 								String nom2 = scann();
+								ChoixPerso.setNom2(nom2);
 							}
 							if(scaneN.equals("3")) {
-								System.out.println("Donnez un nouveau nom a ");
+								System.out.println("Donnez un nouveau nom a " + listNom[2]);
 								String nom3 = scann();
+								ChoixPerso.setNom3(nom3);
 							}
 						} else {
 							System.err.println("Entrez un chiffre en 1 et 3 !");
 						}
-					}
+					} Menu.main(args);
 				}
 
 				if(scaned == 4) {
