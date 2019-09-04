@@ -130,6 +130,7 @@ public class ChoixPerso {
 			}
 		}
 		
+		
 		if(puissance<11) {
 			puissance = 10;
 		}
